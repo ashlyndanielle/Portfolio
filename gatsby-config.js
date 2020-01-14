@@ -6,17 +6,18 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Ashlyn Mitros",
-    author: "Ashlyn Mitros",
+    title: 'Ashlyn Mitros | Web Developer',
+    author: 'Ashlyn Mitros',
   },
   plugins: [
-    `gatsby-plugin-sass`,
+    'gatsby-plugin-sass',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `src`,
+        name: 'src',
         path: `${__dirname}/src/`,
       },
     },
+    'gatsby-transformer-remark',
   ],
 }
