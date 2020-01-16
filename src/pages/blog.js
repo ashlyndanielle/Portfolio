@@ -1,14 +1,14 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 
 import Layout from '../components/layout';
 
 // Goal: show a list of posts
-// 1. query the title and date for each post
+// 1. query the title, date and slug for each post
 // 2. render an ol on the page
 // 3. render an li with a nested h2 (title) and p (date) for each post
 //    - google: "render array of objects react" if needed
-// 4. test your work
+// 4. link to each new page
 
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
@@ -21,6 +21,9 @@ const BlogPage = () => {
               title
               date
             }
+            fields {
+              slug
+            }
           }
         }
       }
@@ -28,11 +31,10 @@ const BlogPage = () => {
   `)
 
   const blogPosts = data.allMarkdownRemark.edges.map(edge => {
-    const { frontmatter } = edge.node;
-    const { id } = edge.node;
+    const { frontmatter, id, fields } = edge.node;
     return (
       <li key={id}>
-        <h3>{frontmatter.title}</h3>
+        <Link to={`/blog/${fields.slug}`}><h3>{frontmatter.title}</h3></Link>
         <p>{frontmatter.date}</p>
       </li>
     )
