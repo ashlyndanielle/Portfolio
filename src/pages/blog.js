@@ -3,6 +3,8 @@ import { graphql, useStaticQuery, Link } from 'gatsby';
 
 import Layout from '../components/layout';
 
+import blogStyles from './blog.module.scss';
+
 // Goal: show a list of posts
 // 1. query the title, date and slug for each post
 // 2. render an ol on the page
@@ -33,9 +35,11 @@ const BlogPage = () => {
   const blogPosts = data.allMarkdownRemark.edges.map(edge => {
     const { frontmatter, id, fields } = edge.node;
     return (
-      <li key={id}>
-        <Link to={`/blog/${fields.slug}`}><h3>{frontmatter.title}</h3></Link>
-        <p>{frontmatter.date}</p>
+      <li key={id} className={blogStyles.post}>
+        <Link to={`/blog/${fields.slug}`}>
+          <h3>{frontmatter.title}</h3>
+          <p>{frontmatter.date}</p>
+        </Link>
       </li>
     )
   });
@@ -43,8 +47,8 @@ const BlogPage = () => {
 
   return (
     <Layout>
-      <h2>Blog</h2>
-      <ol>
+      <h2>Projects</h2>
+      <ol className={blogStyles.posts}>
         {blogPosts}
       </ol>
     </Layout>

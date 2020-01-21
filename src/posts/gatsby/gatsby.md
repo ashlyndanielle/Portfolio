@@ -1,6 +1,6 @@
 ---
 title: "The Great Gastby Bootcamp"
-date: "2020-01-06"
+date: "01-06-2020"
 ---
 
 Learning to use Gatsby with GraphQL

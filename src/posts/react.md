@@ -1,6 +1,6 @@
 ---
 title: 'React'
-date: '2020-01-01'
+date: '01-01-2020'
 ---
 
 Learning to use React
