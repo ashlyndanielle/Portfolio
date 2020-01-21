@@ -25,6 +25,17 @@ export const query = graphql`
     }
   }
 `
+// Query Breakdown ^^
+// variable = $variable: datatype (this should match the key in the database
+// i.e. key "slug" becomes $slug)
+// variable is placed in parenthesis after the query keyword
+// after the query starts (i.e. markdownremark) place
+// your variable inside of parenthesis (i.e. eq: $slug)
+// then finish off your query as normal, you now how dynamic data
+
+// In this query, graphql will grab the variable $slug from the context
+// we set up when we created the page in node.  It will then pass
+// the response data down as props to the Blog component
 
 const Blog = (props) => {
   const { frontmatter, html } = props.data.markdownRemark

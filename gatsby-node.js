@@ -39,13 +39,13 @@ module.exports.createPages = async ({ graphql, actions }) => {
   `)
   console.log('_______________________', JSON.stringify(response, null, 4));
   // 3. create new pages
-  console.log('_______________________', response.data.allMarkdownRemark);
   response.data.allMarkdownRemark.edges.forEach(edge => {
+    const { slug } = edge.node.fields;
     createPage({
       component: blogTemplate,
-      path: `/blog/${edge.node.fields.slug}`,
+      path: `/blog/${slug}`,
       context: {
-        slug: edge.node.fields.slug
+        slug
       }
     })
   })
