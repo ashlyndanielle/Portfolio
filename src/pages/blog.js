@@ -34,11 +34,12 @@ const BlogPage = () => {
 
   const blogPosts = data.allMarkdownRemark.edges.map(edge => {
     const { frontmatter, id, fields } = edge.node;
+    const publishDate = new Date(frontmatter.date);
     return (
       <li key={id} className={blogStyles.post}>
         <Link to={`/blog/${fields.slug}`}>
           <h3>{frontmatter.title}</h3>
-          <p>{frontmatter.date}</p>
+          <p>{publishDate.toDateString()}</p>
         </Link>
       </li>
     )
@@ -47,7 +48,7 @@ const BlogPage = () => {
 
   return (
     <Layout>
-      <h2>Projects</h2>
+      <h2>Posts</h2>
       <ol className={blogStyles.posts}>
         {blogPosts}
       </ol>
