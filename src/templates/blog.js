@@ -8,20 +8,33 @@ import Layout from '../components/layout';
 // magic shit and this query has access to the context
 // passed into create page and badabing badaboom
 // you have access to your data via props.data
+// *********THIS WAS THE MARKDOWN QUERY*********
+// export const query = graphql`
+//   query ($slug: String!) {
+//     markdownRemark (
+//       fields: {
+//         slug: {
+//           eq: $slug
+//         }
+//       }
+//     ) {
+//       frontmatter {
+//         title
+//         date
+//       }
+//       html
+//     }
+//   }
+// `
 export const query = graphql`
   query ($slug: String!) {
-    markdownRemark (
-      fields: {
-        slug: {
-          eq: $slug
-        }
+    contentfulBlogPost (
+      slug: {
+        eq: $slug
       }
     ) {
-      frontmatter {
-        title
-        date
-      }
-      html
+      title
+      publishedDate (formatString: "MMM DD[,] YYYY")
     }
   }
 `
@@ -38,12 +51,12 @@ export const query = graphql`
 // the response data down as props to the Blog component
 
 const Blog = (props) => {
-  const { frontmatter, html } = props.data.markdownRemark
+  const { title, publishedDate } = props.data.contentfulBlogPost
   return (
     <Layout>
-      <h1>{frontmatter.title}</h1>
-      <h4>{frontmatter.date}</h4>
-      <div dangerouslySetInnerHTML={{__html: html}}></div>
+      <h1>{title}</h1>
+      <h4>{publishedDate}</h4>
+      {/* <div dangerouslySetInnerHTML={{__html: html}}></div> */}
     </Layout>
   )
 }

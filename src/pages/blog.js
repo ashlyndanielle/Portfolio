@@ -68,7 +68,7 @@ const BlogPage = () => {
   `)
 
   const contentfulPosts = contentfulData.allContentfulBlogPost.edges.map(edge => {
-    const { title, slug, publishedDate, id } = edge.node;
+    const { id, title, slug, publishedDate } = edge.node;
     return (
       <li key={id} className={blogStyles.post}>
         <Link to={`/blog/${slug}`}>
