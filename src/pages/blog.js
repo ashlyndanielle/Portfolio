@@ -13,44 +13,77 @@ import blogStyles from './blog.module.scss';
 // 4. link to each new page
 
 const BlogPage = () => {
-  const data = useStaticQuery(graphql`
+  // OLD MARKDOWN QUERY
+  // const mdData = useStaticQuery(graphql`
+  //   query {
+  //     allMarkdownRemark {
+  //       edges {
+  //         node {
+  //           id
+  //           frontmatter {
+  //             title
+  //             date
+  //           }
+  //           fields {
+  //             slug
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
+  // const blogPosts = mdData.allMarkdownRemark.edges.map(edge => {
+  //   const { frontmatter, id, fields } = edge.node;
+  //   // const publishDate = new Date(frontmatter.date);
+  //   return (
+  //     <li key={id} className={blogStyles.post}>
+  //       <Link to={`/blog/${fields.slug}`}>
+  //         <h3>{frontmatter.title}</h3>
+  //         <p>{frontmatter.date}</p>
+  //       </Link>
+  //     </li>
+  //   )
+  // });
+
+  const contentfulData = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allContentfulBlogPost (
+        sort: {
+          fields:publishedDate
+          order:DESC
+        }
+      ){
         edges {
           node {
             id
-            frontmatter {
-              title
-              date
-            }
-            fields {
-              slug
-            }
+            title
+            slug
+            publishedDate (
+              formatString: "MMM DD[,] YYYY"
+            )
           }
         }
       }
     }
   `)
 
-  const blogPosts = data.allMarkdownRemark.edges.map(edge => {
-    const { frontmatter, id, fields } = edge.node;
-    const publishDate = new Date(frontmatter.date);
+  const contentfulPosts = contentfulData.allContentfulBlogPost.edges.map(edge => {
+    const { title, slug, publishedDate, id } = edge.node;
     return (
       <li key={id} className={blogStyles.post}>
-        <Link to={`/blog/${fields.slug}`}>
-          <h3>{frontmatter.title}</h3>
-          <p>{publishDate.toDateString()}</p>
+        <Link to={`/blog/${slug}`}>
+          <h3>{title}</h3>
+          <p>{publishedDate}</p>
         </Link>
       </li>
     )
-  });
-
+  })
 
   return (
     <Layout>
       <h2>Posts</h2>
       <ol className={blogStyles.posts}>
-        {blogPosts}
+        {contentfulPosts}
       </ol>
     </Layout>
   )
