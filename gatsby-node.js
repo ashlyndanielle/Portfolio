@@ -35,7 +35,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  console.log('_______________________', JSON.stringify(response, null, 4));
+  // console.log('_______________________', JSON.stringify(response, null, 4));
   // 3. create new pages
   response.data.allContentfulBlogPost.edges.forEach(edge => {
     const { slug } = edge.node;
