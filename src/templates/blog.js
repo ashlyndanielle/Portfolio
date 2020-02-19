@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import Layout from '../components/layout';
+import Head from '../components/head';
 
 // this is just the way it works...you have to 
 // export the query and then graphql does some
@@ -66,6 +67,7 @@ const Blog = (props) => {
   const { title, publishedDate, body } = props.data.contentfulBlogPost
   return (
     <Layout>
+      <Head title={title} />
       <h1>{title}</h1>
       <h4>{publishedDate}</h4>
       {documentToReactComponents(body.json, options)}
