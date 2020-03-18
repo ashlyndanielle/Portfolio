@@ -5,7 +5,7 @@ import axios from 'axios';
 import Layout from '../components/layout';
 
 const Coronavirus = () => {
-  // const [virusData, setVirusData] = useState([]);
+  const [virusData, setVirusData] = useState([]);
   const [lastChecked, setLastChecked] = useState();
 
   useEffect(() => {
