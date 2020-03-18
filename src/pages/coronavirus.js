@@ -12,7 +12,7 @@ const Coronavirus = () => {
     axios.get('https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats', {
       "headers": {
         "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
-        "x-rapidapi-key": process.env.CORONAVIRUS_KEY
+        "x-rapidapi-key": process.env.GATSBY_CORONAVIRUS_KEY
       }
     }).then(response => {
       console.log(response.data.data)
