@@ -7,12 +7,14 @@ import coronaStyles from './styles/coronavirus.module.css';
 
 const Coronavirus = () => {
   const [lastChecked, setLastChecked] = useState('');
-  // const [totalInfected, setTotalInfected] = useState(0);
-  // const [totalDeaths, setTotalDeaths] = useState(0);
+  const [totalInfected, setTotalInfected] = useState(0);
+  const [totalDeaths, setTotalDeaths] = useState(0);
   const [virusData, setVirusData] = useState([]);
   const [hasFetched, setHasFetched] = useState(false);
+  const [isFetching, setIsFetching] = useState(false);
 
   useEffect(() => {
+    setIsFetching(true);
     axios.get('https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats', {
       "headers": {
         "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
@@ -20,23 +22,25 @@ const Coronavirus = () => {
       }
     }).then(response => {
       const { lastChecked, covid19Stats } = response.data.data;
+      setIsFetching(false);
       displayDate(lastChecked);
       setVirusData(covid19Stats);
       setHasFetched(true);
+      const [infections, deaths] = getTotals(covid19Stats);
+      setTotalInfected(infections);
+      setTotalDeaths(deaths);
     })
   }, []);
   
-  // function setTotals(stats) {
-  //   let infections = 0;
-  //   let deaths = 0;
-  //   stats.forEach(location => {
-  //     infections += location.confirmed;
-  //     deaths += location.deaths;
-  //   });
-  //   setTotalInfected(infections);
-  //   setTotalDeaths(deaths);
-  //   console.log('deaths:', totalDeaths, 'infections: ', totalInfected);
-  // }
+  function getTotals(stats) {
+    let infections = 0;
+    let deaths = 0;
+    stats.forEach(location => {
+      infections += location.confirmed;
+      deaths += location.deaths;
+    });
+    return [infections, deaths];
+  }
   // TO DO:
   // sort results by confirmed
   // add location checker (change state / country / etc)
@@ -46,10 +50,6 @@ const Coronavirus = () => {
     let dateString = new Date(date);
     setLastChecked(dateString.toLocaleString())
   }
-
-  // function displayTotals(infected, deaths) {
-  //   return <h3>Total Infected: {infected} || Total Deaths: {deaths}</h3>
-  // }
 
   const locationData = virusData
     .filter(location => {
@@ -64,17 +64,20 @@ const Coronavirus = () => {
       )
     })
 
-  return (
-    <Layout>
-      <h2>Utah coronavirus totals as of: <span className={coronaStyles.displayDate}>{lastChecked}</span></h2>
-        {
-          hasFetched ? 
-            locationData 
-              : 
-            null
-        }
-    </Layout>
-  )
+  console.log('deaths:', totalDeaths, 'infections: ', totalInfected);
+  console.log('isFetching: ', isFetching);
+  console.log('hasFetched: ', hasFetched);
+
+  return !isFetching
+    && hasFetched
+      ? (
+      <Layout>
+          <h2>Utah coronavirus totals as of: <span className={coronaStyles.dataEmphasis}>{lastChecked}</span></h2>
+          <h3>World Infections: <span className={coronaStyles.dataEmphasis}>{totalInfected}</span> || World Deaths: <span className={coronaStyles.dataEmphasis}>{totalDeaths}</span></h3>
+          {locationData}
+        </Layout>
+      )
+      : null
 }
 
 export default Coronavirus;
