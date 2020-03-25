@@ -3,12 +3,12 @@ import axios from 'axios';
 
 import Layout from '../components/layout';
 
-import coronaStyles from './styles/coronavirus.css';
+import coronaStyles from './styles/coronavirus.module.css';
 
 const Coronavirus = () => {
   const [lastChecked, setLastChecked] = useState('');
-  const [totalInfected, setTotalInfected] = useState(0);
-  const [totalDeaths, setTotalDeaths] = useState(0);
+  // const [totalInfected, setTotalInfected] = useState(0);
+  // const [totalDeaths, setTotalDeaths] = useState(0);
   const [virusData, setVirusData] = useState([]);
   const [hasFetched, setHasFetched] = useState(false);
 
@@ -51,23 +51,22 @@ const Coronavirus = () => {
   //   return <h3>Total Infected: {infected} || Total Deaths: {deaths}</h3>
   // }
 
-  const locationData = virusData.map(location => {
-    if (location.country === "US" && location.province === "Utah") {
-      if (location.confirmed !== 0) {
-        return (
-          <ul key={location.keyId}>
-            <li><strong>City:</strong> {location.city}</li>
-            <li><strong>Infected:</strong> {location.confirmed}</li>
-            <li><strong>Deaths:</strong> {location.deaths}</li>
-          </ul>
-        )
-      }
-    }
-  })
+  const locationData = virusData
+    .filter(location => {
+      return (location.country === "US" && location.province === "Utah" && location.confirmed !==0)
+    }).sort((a, b) => b.confirmed - a.confirmed).map(location => {
+      return (
+        <ul key={location.keyId}>
+          <li><strong>County:</strong> {location.city}</li>
+          <li><strong>Infected:</strong> {location.confirmed}</li>
+          <li><strong>Deaths:</strong> {location.deaths}</li>
+        </ul>
+      )
+    })
 
   return (
     <Layout>
-      <h2>Coronavirus as of: {lastChecked}</h2>
+      <h2>Utah coronavirus totals as of: <span className={coronaStyles.displayDate}>{lastChecked}</span></h2>
         {
           hasFetched ? 
             locationData 
