@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-// import {coronavirusKey} from '../../secret.js';
 import Layout from '../components/layout';
+
+import coronaStyles from './styles/coronavirus.css';
 
 const Coronavirus = () => {
   const [lastChecked, setLastChecked] = useState('');
   const [totalInfected, setTotalInfected] = useState(0);
+  const [totalDeaths, setTotalDeaths] = useState(0);
   const [virusData, setVirusData] = useState([]);
   const [hasFetched, setHasFetched] = useState(false);
 
@@ -23,21 +25,33 @@ const Coronavirus = () => {
       setHasFetched(true);
     })
   }, []);
-
-  console.log('virus data: ', virusData);
+  
+  // function setTotals(stats) {
+  //   let infections = 0;
+  //   let deaths = 0;
+  //   stats.forEach(location => {
+  //     infections += location.confirmed;
+  //     deaths += location.deaths;
+  //   });
+  //   setTotalInfected(infections);
+  //   setTotalDeaths(deaths);
+  //   console.log('deaths:', totalDeaths, 'infections: ', totalInfected);
+  // }
+  // TO DO:
+  // sort results by confirmed
+  // add location checker (change state / country / etc)
+  // display totals
 
   function displayDate(date) {
     let dateString = new Date(date);
     setLastChecked(dateString.toLocaleString())
   }
 
-  function displayTotals(infected, deaths) {
-    return <h3>Total Infected: {infected} || Total Deaths: {deaths}</h3>
-  }
+  // function displayTotals(infected, deaths) {
+  //   return <h3>Total Infected: {infected} || Total Deaths: {deaths}</h3>
+  // }
 
   const locationData = virusData.map(location => {
-    let infected = 0;
-    let deaths = 0;
     if (location.country === "US" && location.province === "Utah") {
       if (location.confirmed !== 0) {
         return (
@@ -53,7 +67,7 @@ const Coronavirus = () => {
 
   return (
     <Layout>
-      <h1>Coronavirus as of: {lastChecked}</h1>
+      <h2>Coronavirus as of: {lastChecked}</h2>
         {
           hasFetched ? 
             locationData 
