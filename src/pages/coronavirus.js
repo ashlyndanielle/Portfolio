@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import Layout from '../components/layout';
 
-import coronaStyles from './styles/coronavirus.module.css';
+import coronaStyles from './styles/coronavirus.module.scss';
 
 const Coronavirus = () => {
   const [lastChecked, setLastChecked] = useState('');
