@@ -22,11 +22,13 @@ const Coronavirus = () => {
       }
     }).then(response => {
       const { lastChecked, covid19Stats } = response.data.data;
+      const [infections, deaths] = getTotals(covid19Stats);
+
       setIsFetching(false);
+      setHasFetched(true);
+
       displayDate(lastChecked);
       setVirusData(covid19Stats);
-      setHasFetched(true);
-      const [infections, deaths] = getTotals(covid19Stats);
       setTotalInfected(infections);
       setTotalDeaths(deaths);
     })
@@ -74,7 +76,9 @@ const Coronavirus = () => {
       <Layout>
           <h2>Utah coronavirus totals as of: <span className={coronaStyles.dataEmphasis}>{lastChecked}</span></h2>
           <h3>World Infections: <span className={coronaStyles.dataEmphasis}>{totalInfected}</span> || World Deaths: <span className={coronaStyles.dataEmphasis}>{totalDeaths}</span></h3>
-          {locationData}
+          <div className={coronaStyles.infectionGrid}>
+            {locationData}
+          </div>
         </Layout>
       )
       : null

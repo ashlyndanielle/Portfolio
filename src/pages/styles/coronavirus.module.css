@@ -10,3 +10,9 @@ li {
 span.data-emphasis {
   color: var(--purple);
 }
+
+.infection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
