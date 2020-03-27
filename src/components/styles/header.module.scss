@@ -31,7 +31,17 @@
 }
 
 .nav-item:hover {
-  color: #dec5ff;
+  color: #e4e4e4;
+}
+
+.nav-item:hover:after {
+  content: '';
+  height: 1px;
+  width: 100%;
+  background: #e4e4e4;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 .active-nav-item {
