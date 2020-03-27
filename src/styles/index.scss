@@ -3,7 +3,8 @@
 
 
 :root {
-  --primary: #60319e;
+  --primary: #2a0061;
+  --primaryhover: #5713b3;
 }
 
 html {
@@ -564,4 +565,13 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primaryhover);
 }
