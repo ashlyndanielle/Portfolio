@@ -26,6 +26,8 @@
   font-size: 0.9rem;
   margin-right: 1.2rem;
   text-decoration: none;
+  display: inline-block;
+  position: relative;
 }
 
 .nav-item:hover {
@@ -34,4 +36,14 @@
 
 .active-nav-item {
   font-weight: bold;
+}
+
+.active-nav-item:after {
+  content: '';
+  height: 1px;
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
