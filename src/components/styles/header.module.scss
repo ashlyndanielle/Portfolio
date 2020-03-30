@@ -16,16 +16,16 @@
 }
 
 .title:hover {
-  color: var(--primary);
+  color: #fff;
 }
 
-@media (max-width: var(--tabletwidth)) {
+@media (max-width: 749px) {
   .title {
     font-size: 1.75rem;
   }
 }
 
-@media (max-width: var(--mobilewidth)) {
+@media (max-width: 519px) {
   .title {
     font-size: 1.5rem;
   }
