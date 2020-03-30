@@ -5,6 +5,8 @@
 :root {
   --primary: #2a0061;
   --primaryhover: #5713b3;
+  --tabletwidth: 749px;
+  --mobilewidth: 519px;
 }
 
 html {
@@ -561,7 +563,7 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 520px) {
   html {
     font-size: 100%;
   }

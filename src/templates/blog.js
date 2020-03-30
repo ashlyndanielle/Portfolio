@@ -10,24 +10,7 @@ import Head from '../components/head';
 // magic shit and this query has access to the context
 // passed into create page and badabing badaboom
 // you have access to your data via props.data
-// *********THIS WAS THE MARKDOWN QUERY*********
-// export const query = graphql`
-//   query ($slug: String!) {
-//     markdownRemark (
-//       fields: {
-//         slug: {
-//           eq: $slug
-//         }
-//       }
-//     ) {
-//       frontmatter {
-//         title
-//         date
-//       }
-//       html
-//     }
-//   }
-// `
+
 export const query = graphql`
   query ($slug: String!) {
     contentfulBlogPost (

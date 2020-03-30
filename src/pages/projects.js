@@ -6,45 +6,7 @@ import Head from '../components/head';
 
 import projectStyles from './styles/projects.module.scss';
 
-// Goal: show a list of posts
-// 1. query the title, date and slug for each post
-// 2. render an ol on the page
-// 3. render an li with a nested h2 (title) and p (date) for each post
-//    - google: "render array of objects react" if needed
-// 4. link to each new page
-
 const ProjectsPage = () => {
-  // OLD MARKDOWN QUERY
-  // const mdData = useStaticQuery(graphql`
-  //   query {
-  //     allMarkdownRemark {
-  //       edges {
-  //         node {
-  //           id
-  //           frontmatter {
-  //             title
-  //             date
-  //           }
-  //           fields {
-  //             slug
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-  // const blogPosts = mdData.allMarkdownRemark.edges.map(edge => {
-  //   const { frontmatter, id, fields } = edge.node;
-  //   // const publishDate = new Date(frontmatter.date);
-  //   return (
-  //     <li key={id} className={projectStyles.post}>
-  //         <Link to={`/blog/${fields.slug}`}>
-  //         <h3>{frontmatter.title}</h3>
-  //         <p>{frontmatter.date}</p>
-  //       </Link>
-  //     </li>
-  //   )
-  // });
 
   const contentfulData = useStaticQuery(graphql`
     query {

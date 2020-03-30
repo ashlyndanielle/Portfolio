@@ -11,12 +11,28 @@
 
 .title {
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   text-decoration: none;
+}
+
+@media (max-width: var(--tabletwidth)) {
+  .title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: var(--mobilewidth)) {
+  .title {
+    font-size: 1.5rem;
+  }
+  h1 {
+    margin-bottom: 1rem;
+  }
 }
 
 .nav-list {
   display: flex;
+  flex-wrap: wrap;
   list-style-type: none;
   margin: 0;
 }
