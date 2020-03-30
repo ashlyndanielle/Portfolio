@@ -15,6 +15,10 @@
   text-decoration: none;
 }
 
+.title:hover {
+  color: var(--primary);
+}
+
 @media (max-width: var(--tabletwidth)) {
   .title {
     font-size: 1.75rem;
