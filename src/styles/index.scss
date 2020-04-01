@@ -1,16 +1,6 @@
 /* Reset provided by https://github.com/gatsbyjs/gatsby-starter-blog via MIT license */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:700&display=swap');
-
-
-:root {
-  // --primary: #2a0061;
-  --primary: #002459;
-  // --primaryhover: #6934AD;
-  --primaryhover: #004DBF;
-}
 
 html {
-  font-family: 'Open Sans', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -72,7 +62,6 @@ dfn {
   font-style: italic;
 }
 h1 {
-  font-family: 'Open Sans Condensed', sans-serif;
   font-size: 2em;
   margin: 0.67em 0;
 }
@@ -242,7 +231,6 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Open Sans Condensed', sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
 }
@@ -567,13 +555,4 @@ pre tt:after {
   html {
     font-size: 100%;
   }
-}
-
-a {
-  color: var(--primary);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--primaryhover);
 }
