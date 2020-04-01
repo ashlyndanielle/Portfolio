@@ -30,12 +30,19 @@ input:not([type=checkbox]):not([type=radio]):not([type=submit]) {
 input {
   background-color: #fff !important;
   font-size: 1rem;
-  border: 1px solid darkgray;
-  padding: 26px 10px 5px;
+  border: 1px solid #a9a9a9;
+  padding: 27px 10px 5px;
   margin-bottom: 1rem;
 }
 
 input:focus {
   outline: none;
   border: 1px solid var(--primary);
+}
+
+textarea {
+  width: 100%;
+  font-size: 1rem;
+  border: 1px solid #a9a9a9;
+  padding: 5px 10px;
 }
