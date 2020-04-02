@@ -24,6 +24,9 @@ const ContactPage = () => {
           <label for="subject">Subject</label>
           <textarea name="message" id="message" placeholder="message" rows="7"></textarea>
         </div>
+        <div className={contactStyles.inputContainer}>
+          <input type="submit" name="submit" id="submit" placeholder="Send" />
+        </div>
       </form>
     </Layout>
   )

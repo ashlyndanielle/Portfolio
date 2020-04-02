@@ -23,21 +23,58 @@ a:hover {
 }
 
 // forms
-input:not([type=checkbox]):not([type=radio]):not([type=submit]) {
+input:not([type=checkbox]):not([type=radio]) {
   width: 100%;
 }
 
 input {
-  background-color: #fff !important;
+  background-color: #fff;
   font-size: 1rem;
-  border: 1px solid #a9a9a9;
+  border: 1px solid #bfbfbf;
   padding: 27px 10px 5px;
   margin-bottom: 1rem;
+}
+
+input[type=submit] {
+  position: absolute;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 16px 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Open sans condensed';
+  box-shadow: 3px 3px 6px #a9a9a9;
+  transition: box-shadow .2s ease, top .2s ease;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  box-shadow: none;
+  top: 2px;
+}
+
+.input-container {
+  position: relative;
 }
 
 input:focus {
   outline: none;
   border: 1px solid var(--primary);
+}
+
+label {
+  transition: top .2s ease, font-size .2s ease;
+  position: absolute;
+  top: 16px;
+  left: 10px;
+}
+
+input:focus + label,
+input:valid + label {
+  color: #bfbfbf;
+  font-size: 0.8rem;
+  top: 5px;
 }
 
 textarea {
