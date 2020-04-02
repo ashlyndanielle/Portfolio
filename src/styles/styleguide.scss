@@ -51,7 +51,7 @@ input[type=submit] {
 
 input[type=submit]:hover {
   box-shadow: none;
-  top: 2px;
+  top: 1px;
 }
 
 .input-container {
@@ -82,4 +82,5 @@ textarea {
   font-size: 1rem;
   border: 1px solid #a9a9a9;
   padding: 5px 10px;
+  margin-bottom: 1rem;
 }
