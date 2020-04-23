@@ -47,13 +47,13 @@ const ProjectsPage = () => {
       <Head title="Projects" />
       <h2>Projects</h2>
       <ol className={projectStyles.posts}>
-        {contentfulPosts}
         <li className={projectStyles.post}>
           <Link to={`/projects/cssChallenge`}>
             <h3>100 Days of CSS</h3>
             <p>Spring 2020 - Present</p>
           </Link>
         </li>
+        {/* {contentfulPosts} */}
       </ol>
     </Layout>
   )
