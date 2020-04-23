@@ -1,0 +1,99 @@
+
+// use only the available space inside the 400x400 frame
+.frame {
+	background: #a9927f;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-shadow: 1px 1px 6px #a9a9a9;
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+.eyelid,
+.eye,
+.iris,
+.pupil {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.eye {
+	width: 200px;
+	height: 200px;
+}
+
+.eyelid {
+	z-index: 2;
+	height: 270px;
+	width: 290px;
+	border-radius: 50%;
+	border-top: 59px solid #a9927f;
+	border-bottom: 59px solid #a9927f;
+	animation: blink 7s ease-in-out infinite;
+}
+
+.eyeball {
+	position: absolute;
+	background: whitesmoke;
+	border-radius: 0 200px;
+	height: 200px;
+	width: 200px;
+	transform: rotate(-45deg);
+	overflow: hidden;
+}
+
+.iris {
+	height: 100px;
+	width: 100px;
+	background: #255d3e;
+	border-radius: 100%;
+	animation: looking 9s ease-in-out infinite;
+}
+
+.pupil {
+	height: 40px;
+	width: 40px;
+	background: #000;
+	border-radius: 100%;
+}
+
+@keyframes blink {
+  0%, 30%, 40%, 60%, 75%, 90%, 100% {
+    height: 270px;
+  }
+	
+	65%, 70% {
+		height: 150px;
+	}
+
+  35%, 95% {
+    height: 0;
+  }
+}
+
+@keyframes looking {
+	0%, 10%, 50%, 60%, 100% {
+		transform: translate(-50%, -50%);
+	}
+	20%, 25% {
+		transform: translate(-80%, -50%);
+	}
+	30%, 40% {
+		transform: translate(-50%, -20%);
+	}
+	70%, 90% {
+		transform: translate(-30%, -50%);
+	}
+}
