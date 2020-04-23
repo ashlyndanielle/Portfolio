@@ -45,9 +45,6 @@ const ProjectsPage = () => {
   return (
     <Layout>
       <Head title="Projects" />
-      <Link to={'/projects'}>
-        <p className={projectStyles.breadcrumb}>&#8592; Projects</p>
-      </Link>
       <h2>Projects</h2>
       <ol className={projectStyles.posts}>
         <li className={projectStyles.post}>

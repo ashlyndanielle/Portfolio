@@ -11,6 +11,9 @@ const CssChallenge = () => {
   return (
     <Layout>
       <Head title="100 Days of CSS"/>
+      <Link to={'/projects'}>
+        <p className={projectStyles.breadcrumb}>&#8592; Projects</p>
+      </Link>
       <h1>100 Days of CSS Challenge</h1>
       <p>Challenges curtosy of <a href="https://100dayscss.com/" target="_blank" rel="noopener">100dayscss.com</a></p>
       <div className={challengeStyles.container}>
