@@ -10,7 +10,7 @@ const ContactPage = () => {
     <Layout>
       <Head title="Contact" />
       <h2>Contact Me</h2>
-      <form name="contact" method="POST" data-netlify="true">
+      <form name="contact" method="POST" data-netlify="true" action="/success">
         <input type="hidden" name="form-name" value="contact" />
         <div className={contactStyles.inputContainer}>
           <input type="text" name="name" id="name" required></input>
