@@ -3,15 +3,11 @@
 .frame {
 	background: #a9927f;
   position: relative;
-  width: 300px;
+  width: 100%;
   height: 300px;
   border-radius: 2px;
 	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
 	overflow: hidden;
-  color: #333;
-	font-family: 'Open Sans', Helvetica, sans-serif;
-	-webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   box-shadow: 1px 1px 6px #a9a9a9;
 }
 
@@ -39,8 +35,8 @@
 	height: 270px;
 	width: 290px;
 	border-radius: 50%;
-	border-top: 59px solid #a9927f;
-	border-bottom: 59px solid #a9927f;
+	border-top: 60px solid #a9927f;
+	border-bottom: 60px solid #a9927f;
 	animation: blink 7s ease-in-out infinite;
 }
 
@@ -59,6 +55,8 @@
 	width: 100px;
 	background: #255d3e;
 	border-radius: 100%;
+	border: 4px solid #19422c;
+	box-shadow: inset 0 0 10px #0f271a;
 	animation: looking 9s ease-in-out infinite;
 }
 
@@ -67,6 +65,7 @@
 	width: 40px;
 	background: #000;
 	border-radius: 100%;
+	box-shadow: 0 0 10px #487220;
 }
 
 @keyframes blink {

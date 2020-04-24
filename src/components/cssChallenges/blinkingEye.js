@@ -1,15 +1,15 @@
 import React from 'react';
 
-import styles from './styles/blinkingEye.module.scss';
+import eyeStyles from './styles/blinkingEye.module.scss';
 
 const BlinkingEye = () => {
   return (
-    <section className={styles.frame}>
-      <div className={styles.eyelid}></div>
-      <div className={styles.eye}>
-        <div className={styles.eyeball}>
-          <div className={styles.iris}>
-            <div className={styles.pupil}></div>
+    <section className={eyeStyles.frame}>
+      <div className={eyeStyles.eyelid}></div>
+      <div className={eyeStyles.eye}>
+        <div className={eyeStyles.eyeball}>
+          <div className={eyeStyles.iris}>
+            <div className={eyeStyles.pupil}></div>
           </div>
         </div>
       </div>

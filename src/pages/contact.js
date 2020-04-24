@@ -14,15 +14,15 @@ const ContactPage = () => {
         <input type="hidden" name="form-name" value="contact" />
         <div className={contactStyles.inputContainer}>
           <input type="text" name="name" id="name" required></input>
-          <label for="name">Name</label>
+          <label htmlFor="name">Name</label>
         </div>
         <div className={contactStyles.inputContainer}>
           <input type="text" name="email" id="email" required></input>
-          <label for="email">Email</label>
+          <label htmlFor="email">Email</label>
         </div>
         <div className={contactStyles.inputContainer}>
           <input type="text" name="subject" id="subject" required></input>
-          <label for="subject">Subject</label>
+          <label htmlFor="subject">Subject</label>
           <textarea name="message" id="message" placeholder="message" rows="7"></textarea>
         </div>
         <div className={contactStyles.inputContainer}>
