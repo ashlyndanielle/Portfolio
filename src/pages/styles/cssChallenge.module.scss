@@ -11,14 +11,11 @@
   margin: 0 auto;
   max-width: 980px;
   padding: 0 2rem;
-
-  > p {
-    margin-bottom: 1.45rem;
-  }
 }
 
 .container {
   display: grid;
+  margin-top: 20px;
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
   grid-gap: 10px;
 }
