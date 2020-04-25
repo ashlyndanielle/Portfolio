@@ -1,0 +1,185 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+// use only the available space inside the 400x400 frame
+.frame {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-radius: 2px;
+	box-shadow: 1px 1px 6px #a9a9a9;
+	overflow: hidden;
+  background: #684595;
+  color: #333;
+}
+
+.frame:before {
+  content: 'DAY #3';
+	position: absolute;
+	z-index: 100;
+	width: 110%;
+	box-shadow: 1px 1px 3px #000000b9;
+  background: #002459;
+  color: #fff;
+  padding: 10px 50px;
+  transform: skew(10deg, -10deg) translate(-20px);
+  font-weight: bold;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.start {
+	display: none;
+	
+	&:checked ~ svg .circle {
+		animation: drawCircle 5s linear infinite;
+	}
+	
+	&:checked ~ .icon {
+		animation: micDisappear 1s ease forwards;
+	}
+	
+	&:checked ~ .dots {
+		animation: showDots 1s .5s ease forwards;
+		
+		.dot-one {
+			animation: dotDance 1s ease-in-out infinite;
+		}
+
+		.dot-two {
+			animation: dotDance 1s -.2s ease-in-out infinite;
+		}
+
+		.dot-three {
+			animation: dotDance 1s -.4s ease-in-out infinite;
+		}
+	}
+}
+
+.start-label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+	cursor: pointer;
+}
+
+.circle {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 3;
+	stroke-dasharray: 300;
+	stroke-dashoffset: 0;
+	stroke-linecap: round;
+	transform-origin: 50% 50%;
+}
+
+.icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	
+	.mic {
+		width: 20px;
+		height: 40px;
+		border-radius: 10px;
+		background: #fff;
+		
+		.bubble {
+			background: #684595;
+			height: 15px;
+			width: 6px;
+			border-radius: 3px;
+			margin: 8px auto 0;
+		}
+	}
+	
+	.stem {
+		height: 10px;
+		width: 4px;
+		background: #fff;
+	}
+	
+	.foot {
+		height: 4px;
+		width: 20px;
+		background: #fff;
+		border-radius: 2px;
+	}
+}
+
+.dots {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	
+	div {
+		border-radius: 50%;
+		height: 10px;
+		width: 10px;
+		margin: 5px;
+		background: #fff;
+	}
+}
+
+
+@keyframes showDots {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	} 100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes dotDance {
+	0% {
+		transform: translateY(4px)
+	} 50% {
+		transform: translateY(-4px);
+	} 100% {
+		transform: translateY(4px);
+	}
+}
+
+@keyframes micDisappear {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	} 30% {
+		transform: scale(1.1);
+		opacity: 1;
+	} 100% {
+		transform: scale(0);
+		opacity: 0;
+	}
+}
+
+
+@keyframes drawCircle {
+	to {
+		stroke-dashoffset: (-592);
+		transform: rotate(360deg);
+	}
+}

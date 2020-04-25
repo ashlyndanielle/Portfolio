@@ -5,13 +5,26 @@
   width: 100%;
   height: 300px;
   border-radius: 2px;
-	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	box-shadow: 1px 1px 6px #a9a9a9;
 	overflow: hidden;
   background: #2c3e50;
   color: #333;
 	font-family: 'Open Sans', Helvetica, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.frame:before {
+  content: 'DAY #2';
+	position: absolute;
+	z-index: 100;
+	width: 110%;
+	box-shadow: 1px 1px 3px #000000b9;
+  background: #002459;
+  color: #fff;
+  padding: 10px 50px;
+  transform: skew(10deg, -10deg) translate(-20px);
+  font-weight: bold;
 }
 
 .center {
