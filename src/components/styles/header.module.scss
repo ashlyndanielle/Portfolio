@@ -35,10 +35,6 @@
   }
 }
 
-.nav {
-  background: #a9a9a9;
-}
-
 .nav-list {
   display: flex;
   flex-wrap: wrap;
@@ -46,7 +42,7 @@
   margin: 0;
   max-width: 980px;
   margin: 0 auto;
-  padding: .5rem 2rem;
+  padding: 0 0 1rem;
 }
 
 .nav-item {
@@ -77,12 +73,12 @@
   font-weight: bold;
 }
 
-.active-nav-item:after {
-  content: '';
-  height: 1px;
-  width: 100%;
-  background: #fff;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-}
+// .active-nav-item:after {
+//   content: '';
+//   height: 1px;
+//   width: 100%;
+//   background: #fff;
+//   position: absolute;
+//   left: 0;
+//   bottom: 0;
+// }
