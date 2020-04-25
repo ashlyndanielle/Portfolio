@@ -14,11 +14,13 @@ const CssChallenge = () => {
   return (
     <LayoutFullwidth>
       <Head title="100 Days of CSS"/>
-      <Link to={'/projects'}>
-        <p className={challengeStyles.breadcrumb}>&#8592; Projects</p>
-      </Link>
-      <h1>100 Days of CSS</h1>
-      <p>Challenges courtesy of <a href="https://100dayscss.com/" target="_blank" rel="noopener noreferrer">100dayscss.com</a></p>
+      <section className={challengeStyles.heading}>
+        <Link to={'/projects'}>
+          <p className={challengeStyles.breadcrumb}>&#8592; Projects</p>
+        </Link>
+        <h1>100 Days of CSS</h1>
+        <p>Challenges courtesy of <a href="https://100dayscss.com/" target="_blank" rel="noopener noreferrer">100dayscss.com</a></p>
+      </section>
       <div className={challengeStyles.container}>
         <Day1/>
         <Day2/>
