@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import challengeStyles from '../styles/cssChallenge.module.scss';
 
-import LayoutFullwidth from '../../components/layout-fullwidth';
+import LayoutLargewidth from '../../components/layout-largewidth';
 import Head from '../../components/head';
 
 import Day1 from '../../components/cssChallenges/day1';
@@ -13,7 +13,7 @@ import Day4 from '../../components/cssChallenges/day4';
 
 const CssChallenge = () => {
   return (
-    <LayoutFullwidth>
+    <LayoutLargewidth>
       <Head title="100 Days of CSS"/>
       <section className={challengeStyles.heading}>
         <Link to={'/projects'}>
@@ -28,7 +28,7 @@ const CssChallenge = () => {
         <Day3/>
         <Day4/>
       </div>
-    </LayoutFullwidth>
+    </LayoutLargewidth>
   )
 }
 

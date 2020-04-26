@@ -5,7 +5,7 @@ import Footer from './footer';
 
 import '../styles/index.scss';
 import '../styles/styleguide.scss';
-import layoutStyles from './styles/layout-fullwidth.module.scss';
+import layoutStyles from './styles/layout-largewidth.module.scss';
 
 const LayoutFullwidth = props => {
   return (
