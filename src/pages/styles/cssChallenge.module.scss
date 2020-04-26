@@ -2,7 +2,6 @@
   display: inline-block;
   color: #777;
   font-size: .9rem;
-  text-transform: capitalize;
   font-weight: normal;
   font-family: 'Open Sans Condensed';
   letter-spacing: 1px;
@@ -10,8 +9,7 @@
 
 .heading {
   margin: 0 auto;
-  max-width: 980px;
-  padding: 0 2rem;
+  max-width: calc(980px - 4rem);
 }
 
 .container {

@@ -43,7 +43,7 @@ a.btn--primary {
 
 a.button:hover {
   box-shadow: none;
-  top: 1px;
+  transform: translateX(1px);
 }
 
 p:last-child {

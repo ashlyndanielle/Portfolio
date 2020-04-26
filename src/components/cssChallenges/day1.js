@@ -5,7 +5,7 @@ import day1Styles from './styles/day1.module.scss';
 
 const Day1 = () => {
   return (
-    <section className={day1Styles.frame}>
+    <article className={day1Styles.frame}>
       <div className={day1Styles.eyelid}></div>
       <div className={day1Styles.eye}>
         <div className={day1Styles.eyeball}>
@@ -14,7 +14,7 @@ const Day1 = () => {
           </div>
         </div>
       </div>
-    </section>
+    </article>
   )
 }
 

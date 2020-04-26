@@ -5,7 +5,7 @@ import day3Styles from './styles/day3.module.scss';
 
 const Day3 = () => {
   return (
-    <section className={day3Styles.frame}>
+    <article className={day3Styles.frame}>
       <div className={day3Styles.center}>
         <input type="checkbox" id="start" name="start" className={day3Styles.start} />
         <label htmlFor="start" className={day3Styles.startLabel}></label>
@@ -25,7 +25,7 @@ const Day3 = () => {
           <div className={day3Styles.dotThree}></div>
         </div>
       </div>
-    </section>
+    </article>
   )
 }
 
