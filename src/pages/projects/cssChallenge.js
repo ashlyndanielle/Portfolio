@@ -10,6 +10,7 @@ import Day1 from '../../components/cssChallenges/day1';
 import Day2 from '../../components/cssChallenges/day2';
 import Day3 from '../../components/cssChallenges/day3';
 import Day4 from '../../components/cssChallenges/day4';
+import Day5 from '../../components/cssChallenges/day5';
 
 const CssChallenge = () => {
   return (
@@ -27,6 +28,7 @@ const CssChallenge = () => {
         <Day2/>
         <Day3/>
         <Day4/>
+        <Day5/>
       </div>
     </LayoutLargewidth>
   )

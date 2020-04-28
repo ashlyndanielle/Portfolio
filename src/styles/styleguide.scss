@@ -91,15 +91,15 @@ input:focus {
   border: 1px solid var(--primary);
 }
 
-label {
+input[type=text] ~ label {
   transition: top .2s ease, font-size .2s ease;
   position: absolute;
   top: 16px;
   left: 10px;
 }
 
-input:focus + label,
-input:valid + label {
+input[type=text]:focus + label,
+input[type=text]:valid + label {
   color: #bfbfbf;
   font-size: 0.8rem;
   top: 5px;

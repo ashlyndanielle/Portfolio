@@ -1,17 +1,3 @@
 .input-container {
   position: relative;
 }
-
-label {
-  transition: top .2s ease, font-size .2s ease;
-  position: absolute;
-  top: 16px;
-  left: 10px;
-}
-
-input:focus + label,
-input:valid + label {
-  color: #bfbfbf;
-  font-size: 0.8rem;
-  top: 5px;
-}
