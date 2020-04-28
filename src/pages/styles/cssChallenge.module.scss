@@ -14,7 +14,7 @@
 
 .container {
   display: grid;
-  margin-top: 20px;
+  margin: 20px 0;
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
   grid-gap: 10px;
 }
