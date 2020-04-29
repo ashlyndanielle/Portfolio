@@ -1,4 +1,5 @@
 import React from 'react';
+// https://100dayscss.com/?dayIndex=73
 
 import day5Styles from './styles/day5.module.scss';
 

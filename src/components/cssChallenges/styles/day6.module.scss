@@ -1,0 +1,93 @@
+.frame {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 6px #a9a9a9;
+  overflow: hidden;
+  background: #8C2F38;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  .carousel {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p, ul {
+      text-shadow: .5px .5px 1px #000000b9;
+      color: #fff;
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    .rotateContainer {
+      padding-left: 0.5rem;
+      position: relative;
+      height: 2rem;
+      overflow: hidden;
+      top: -0.75rem;
+  
+      ul {
+        font-weight: bold;
+        position: relative;
+        top: 0rem;
+        animation: rotateList 8s ease .2s infinite;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.frame:before {
+  content: 'Day #6';
+  position: absolute;
+  width: 110%;
+  box-shadow: 1px 1px 3px #000000b9;
+  background: #002459;
+  color: #fff;
+  padding: 10px 50px;
+  transform: skew(10deg, -10deg) translate(-20px);
+  font-weight: bold;
+}
+
+@keyframes rotateList {
+  0%, 15% {
+    transform: translateY(0rem);
+  }
+  20%, 35% {
+    transform: translateY(-2rem);
+  }
+  40%, 55% {
+    transform: translateY(-4rem);
+  }
+  60%, 75% {
+    transform: translateY(-6rem);
+  }
+  80%, 95% {
+    transform: translateY(-8rem);
+  }
+  100% {
+    transform: translateY(-10rem);
+  }
+}
+
+// @for $i from 1 through 10 {
+//   .ring-#{$i} {
+//       animation: rotate-#{$i} 5s ease-in-out infinite;
+//   }
+
+//   @keyframes rotate-#{$i} {
+//       $start: ($i * 4);
+//       #{$start}% {
+//           transform: rotateX(0) rotateY(0) rotateZ(0);
+//       }
+//       100% {
+//           transform: rotateX(360deg) rotateY(-360deg) rotateZ(0);
+//       }
+//   }
+// }
