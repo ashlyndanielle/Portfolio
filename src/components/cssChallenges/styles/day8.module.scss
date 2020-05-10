@@ -23,7 +23,7 @@
 
 .cradle {
   position: relative;
-  top: 50%;
+  top: 39%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 60%;
@@ -41,8 +41,49 @@
 }
 
 .sphere {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   background: #ddd;
   border-radius: 50%;
+  position: relative;
+  top: 100px;
+}
+
+.sphere:before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 15px;
+  height: 100px;
+  width: 2px;
+  background: #ddd;
+}
+
+.sphere:nth-of-type(1) {
+  transform-origin: 12px -100px;
+  transform: rotate(30deg);
+  animation: leftEnd 1.5s linear infinite;
+}
+
+.sphere:nth-of-type(5) {
+  transform-origin: 17px -100px;
+  transform: rotate(-30deg);
+  animation: rightEnd 1.5s linear infinite;
+}
+
+@keyframes leftEnd {
+  0%, 50%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes rightEnd {
+  0%, 50%, 100% {
+    transform: rotate(0deg);
+  } 75% {
+    transform: rotate(-20deg);
+  }
 }
