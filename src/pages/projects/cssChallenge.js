@@ -16,6 +16,13 @@ import Day7 from '../../components/cssChallenges/day7';
 import Day8 from '../../components/cssChallenges/day8';
 
 const CssChallenge = () => {
+  
+  const frameComponents = [Day1, Day2, Day3, Day4, Day5, Day6, Day7, Day8];
+  const frames = frameComponents.map(component => {
+    let Frame = component;
+    return <Frame />
+  })
+
   return (
     <LayoutLargewidth>
       <Head title="100 Days of CSS"/>
@@ -27,14 +34,7 @@ const CssChallenge = () => {
         <p>Challenges courtesy of <a href="https://100dayscss.com/" target="_blank" rel="noopener noreferrer">100dayscss.com</a></p>
       </section>
       <div className={challengeStyles.container}>
-        <Day1/>
-        <Day2/>
-        <Day3/>
-        <Day4/>
-        <Day5/>
-        <Day6/>
-        <Day7/>
-        <Day8/>
+        {frames}
       </div>
     </LayoutLargewidth>
   )
