@@ -6,7 +6,7 @@
   border-radius: 2px;
 	box-shadow: 1px 1px 6px #a9a9a9;
 	overflow: hidden;
-  background: #1abc9c;
+  background: #bc1a56;
   color: #333;
 	-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -65,7 +65,7 @@
   }
 
   .input:checked + .selector {
-    color: #1abc9c;
+    color: #bc1a56;
 
     &:before {
       transform: scale(1);

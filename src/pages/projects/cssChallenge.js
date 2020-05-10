@@ -14,10 +14,11 @@ import Day5 from '../../components/cssChallenges/day5';
 import Day6 from '../../components/cssChallenges/day6';
 import Day7 from '../../components/cssChallenges/day7';
 import Day8 from '../../components/cssChallenges/day8';
+import Day9 from '../../components/cssChallenges/day9';
 
 const CssChallenge = () => {
   
-  const frameComponents = [Day1, Day2, Day3, Day4, Day5, Day6, Day7, Day8];
+  const frameComponents = [Day1, Day2, Day3, Day4, Day5, Day6, Day7, Day8, Day9];
   const frames = frameComponents.map(component => {
     let Frame = component;
     return <Frame />
