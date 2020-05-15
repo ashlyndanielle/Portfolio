@@ -77,7 +77,7 @@
       top: -10px;
       background: #f5c7c7;
       transform: rotate(-38deg);
-      animation: flash 6s linear infinite;
+      animation: flash 3s linear infinite;
     }
 
     .top_far-right {
@@ -122,7 +122,7 @@
 }
 
 @keyframes flash {
-  0%, 95% {
+  0%, 87% {
     left: 10px;
   }
   100% {
